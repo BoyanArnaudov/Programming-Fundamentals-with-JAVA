@@ -9,4 +9,4 @@ Skills that are acquired during this course:
 - Basic HTML and CSS skills
 - Working with linear data structures
 
-The course starts at 9th of January 2023, but I'm going to solve the problems before its start and upload them here.
+The course starts at 9th of January 2023, but after paying the fee, I have access to previous editions - lectures, assignments and the homework grading system. So I'm going to solve the tasks before its start and upload them here.
