@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class EvenNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        boolean isOdd = true;
+        while (isOdd){
+            int n = Integer.parseInt(input.nextLine());
+            if (n % 2 == 0){
+                System.out.printf("The number is: %d", Math.abs(n));
+                isOdd = false;
+            } else {
+                System.out.printf("Please write an even number.%n");
+            }
+        }
+    }
+}
