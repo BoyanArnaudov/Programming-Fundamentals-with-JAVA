@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CondenseArrayToNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int[] myArray = Arrays.stream(input.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] smallArray = new int[myArray.length-1] ;
+        for (int i = 0; i < myArray.length; i++){
+            if (myArray.length == 1) {
+                break;
+            }
+            if (i == myArray.length - 1) {
+                int[] smallerArray = new int[smallArray.length - 1];
+                i = -1;
+                myArray = smallArray;
+                smallArray = smallerArray;
+            } else {
+                smallArray[i] = myArray[i] + myArray [i+1];
+            }
+        }      
+        System.out.println(myArray[0]);
+    }
+}
