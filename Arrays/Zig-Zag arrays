@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ZigZagArrays {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        //Write a program that creates 2 arrays.
+        // You will be given an integer n. On the next n lines, you get 2 integers.
+        int arraysNumber = Integer.parseInt(input.nextLine());
+        int[] firstArray = new int[arraysNumber];
+        int[] secondArray = new int[arraysNumber];
+        for (int i = 0; i < firstArray.length; i++) {
+            int[] temporary = Arrays.stream(input.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            if (i % 2 == 0){
+                firstArray[i] = temporary[0];
+                secondArray[i] = temporary[1];
+            } else {
+                firstArray [i] = temporary[1];
+                secondArray [i] = temporary [0];
+            }
+
+        }
+        for (int i = 0; i < firstArray.length; i++) {
+            System.out.print(firstArray[i] + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < secondArray.length; i++) {
+            System.out.print(secondArray[i] + " ");
+        }
+    }
+}
