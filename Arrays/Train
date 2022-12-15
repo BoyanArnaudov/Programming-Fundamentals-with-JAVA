@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Train {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int length = Integer.parseInt(input.nextLine());
+        int[] myArray = new int [length];
+        int sum = 0;
+        for (int i = 0; i < myArray.length; i++) {
+            int number = Integer.parseInt(input.nextLine());
+            myArray[i] = number;
+            sum += number;
+        }
+        for (int i = 0; i < myArray.length; i++){
+            System.out.print(myArray[i] + " ");
+        }
+        System.out.println();
+        System.out.println(sum);
+    }
+}
