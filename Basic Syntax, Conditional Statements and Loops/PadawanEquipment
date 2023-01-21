@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class PadawanEquipment {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double amountOfMoney = Double.parseDouble(input.nextLine());
+        int countOfStudents = Integer.parseInt(input.nextLine());
+        double priceOfLightsabers = Double.parseDouble(input.nextLine());
+        double priceOfRobes = Double.parseDouble(input.nextLine());
+        double priceOfBelts = Double.parseDouble(input.nextLine());
+
+        int freeBelts = countOfStudents / 6;
+        double lightSaberRound = Math.ceil(countOfStudents + (countOfStudents * 0.1));
+        double totalMoneySpend = (priceOfLightsabers * lightSaberRound) + (priceOfRobes * countOfStudents) +
+                priceOfBelts * (countOfStudents - freeBelts);
+
+        if (totalMoneySpend <= amountOfMoney){
+            System.out.printf("The money is enough - it would cost %.2flv.", totalMoneySpend);
+        } else {
+            System.out.printf("George Lucas will need %.2flv more.", totalMoneySpend - amountOfMoney);
+        }
+
+    }
+}
