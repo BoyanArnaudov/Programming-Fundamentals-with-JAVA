@@ -1,0 +1,28 @@
+package BasicSyntax;
+
+import java.util.Scanner;
+
+public class StrongNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = Integer.parseInt(input.nextLine());
+        int operatingNumber = number;
+        int factorielSum = 0;
+
+        while (operatingNumber > 0){
+            int lastDigit = operatingNumber % 10;
+            int factoriel = 1;
+            for (int i = 1; i <= lastDigit; i++) {
+                factoriel = factoriel * i;
+            }
+            factorielSum += factoriel;
+            operatingNumber /= 10;
+        }
+
+        if (factorielSum == number){
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+    }
+}
