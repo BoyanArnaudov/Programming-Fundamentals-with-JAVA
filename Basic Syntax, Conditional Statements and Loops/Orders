@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Orders {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int orders = Integer.parseInt(input.nextLine());
+        double totalPrice = 0;
+
+        for (int i = 1; i <=orders ; i++) {
+            double pricePerCapsules = Double.parseDouble(input.nextLine());
+            int days = Integer.parseInt(input.nextLine());
+            int capsulesCount = Integer.parseInt(input.nextLine());
+            double priceCoffee = (days * capsulesCount) * pricePerCapsules;
+            System.out.printf("The price for the coffee is: $%.2f%n", priceCoffee);
+            totalPrice += priceCoffee;
+        }
+
+        System.out.printf("Total: $%.2f", totalPrice);
+    }
+}
