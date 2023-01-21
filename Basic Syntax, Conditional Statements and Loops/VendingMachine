@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class VendingMachine {
+    public static void main(String[] args) {
+        String command = "";
+        double totalMoney = 0;
+        Scanner input = new Scanner(System.in);
+        while (!command.equals("Start")) {
+            command = input.nextLine();
+            if (command.equals("Start")) {
+                break;
+            } else {
+                double money = Double.parseDouble(command);
+                    if (money == 0.1) {
+                        totalMoney += 0.1;
+                    } else if (money == 0.2) {
+                    totalMoney += 0.2;
+                    } else if (money == 0.5){
+                    totalMoney += 0.5;
+                    } else if (money == 1){
+                    totalMoney += 1;
+                    } else if (money == 2){
+                    totalMoney += 2;
+                    } else{
+                    System.out.printf("Cannot accept %.2f%n", money);
+
+                }
+            }
+        }
+        while (totalMoney >= 0) {
+            String product = input.nextLine();
+            switch (product) {
+                case "Coke":
+                    if (totalMoney < 1) {
+                        System.out.println("Sorry, not enough money");
+                    } else {
+                        totalMoney = totalMoney - 1;
+                        System.out.printf("Purchased %s%n", product);
+                    }
+                    break;
+                case "Soda":
+                    if (totalMoney < 0.8) {
+                        System.out.println("Sorry, not enough money");
+                    } else {
+                        totalMoney -= 0.8;
+                        System.out.printf("Purchased %s%n", product);
+                    }
+                    break;
+                case "Crisps":
+                    if (totalMoney < 1.5) {
+                        System.out.println("Sorry, not enough money");
+                    } else {
+                        totalMoney -= 1.5;
+                        System.out.printf("Purchased %s%n", product);
+                    }
+                    break;
+                case "Water":
+                    if (totalMoney < 0.7) {
+                        System.out.println("Sorry, not enough money");
+                    } else {
+                        totalMoney -= 0.7;
+                        System.out.printf("Purchased %s%n", product);
+                    }
+                    break;
+                case "Nuts":
+                    if (totalMoney < 2) {
+                        System.out.println("Sorry, not enough money");
+                    } else {
+                        totalMoney = totalMoney - 2;
+                        System.out.printf("Purchased %s%n", product);
+                    }
+                    break;
+                case "End":
+                    System.out.printf("Change: %.2f", totalMoney);
+                    return;
+                default:
+                    System.out.println("Invalid product");
+           }
+            if (totalMoney < 0.7){
+                System.out.printf("Change: %.2f", totalMoney);
+                return;
+            }
+        }
+    }
+}
