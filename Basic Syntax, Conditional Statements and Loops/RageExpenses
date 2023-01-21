@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class RageExpenses {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int lostGames = Integer.parseInt(input.nextLine());
+        double headsetPrice = Double.parseDouble(input.nextLine());
+        double mousePrice = Double.parseDouble(input.nextLine());
+        double keyboardPrice = Double.parseDouble(input.nextLine());
+        double monitorPrice = Double.parseDouble(input.nextLine());
+
+        int headsetCount = lostGames / 2;
+        int mouseCount = lostGames / 3;
+        int keyboardCount = lostGames / 6;
+        int monitorCount = lostGames / 12;
+
+        double totalPrice = (headsetPrice * headsetCount) + (mousePrice * mouseCount) +
+                            (keyboardPrice * keyboardCount) + (monitorPrice * monitorCount);
+
+        System.out.printf("Rage expenses: %.2f lv.", totalPrice);
+
+    }
+}
