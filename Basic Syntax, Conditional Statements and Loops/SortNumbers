@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class SortNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int firstNum = Integer.parseInt(input.nextLine());
+        int secondNum = Integer.parseInt(input.nextLine());
+        int thirdNum = Integer.parseInt(input.nextLine());
+
+        if (firstNum > secondNum && firstNum > thirdNum) {
+            System.out.println(firstNum);
+            if (secondNum > thirdNum) {
+                System.out.println(secondNum);
+                System.out.println(thirdNum);
+            } else {
+                System.out.println(thirdNum);
+                System.out.println(secondNum);
+            }
+        }
+
+        if (secondNum > firstNum && secondNum > thirdNum) {
+            System.out.println(secondNum);
+            if (firstNum > thirdNum) {
+                System.out.println(firstNum);
+                System.out.println(thirdNum);
+            } else {
+                System.out.println(thirdNum);
+                System.out.println(firstNum);
+            }
+        }
+
+        if (thirdNum > firstNum && thirdNum > secondNum){
+            System.out.println(thirdNum);
+            if (firstNum > secondNum) {
+                System.out.println(firstNum);
+                System.out.println(secondNum);
+            } else {
+                System.out.println(secondNum);
+                System.out.println(firstNum);
+            }
+        }
+    }
+}
