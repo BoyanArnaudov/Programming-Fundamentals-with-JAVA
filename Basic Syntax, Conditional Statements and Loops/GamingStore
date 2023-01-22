@@ -1,0 +1,78 @@
+package BasicSyntax;
+
+import java.util.Scanner;
+
+public class GamingStore {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        double currentBalance = Double.parseDouble(input.nextLine());
+        double startingBalance = currentBalance;
+        String gamesToBuy = input.nextLine();
+
+        while (!gamesToBuy.equals("Game Time")) {
+            if (gamesToBuy.equals("Game Time")) {
+                break;
+            }
+            if (gamesToBuy.equals("OutFall 4")) {
+                if (currentBalance < 39.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 39.99;
+                    System.out.println("Bought OutFall 4");
+                }
+            } else if (gamesToBuy.equals("CS: OG")) {
+                if (currentBalance < 15.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 15.99;
+                    System.out.println("Bought CS: OG");
+                }
+            } else if (gamesToBuy.equals("Zplinter Zell")) {
+                if (currentBalance < 19.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 19.99;
+                    System.out.println("Bought Zplinter Zell");
+                }
+
+            } else if (gamesToBuy.equals("Honored 2")) {
+                if (currentBalance < 59.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 59.99;
+                    System.out.println("Bought Honored 2");
+                }
+            } else if (gamesToBuy.equals("RoverWatch")) {
+                if (currentBalance < 29.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 29.99;
+                    System.out.println("Bought RoverWatch");
+                }
+            } else if (gamesToBuy.equals("RoverWatch Origins Edition")) {
+                if (currentBalance < 39.99) {
+                    System.out.println("Too Expensive");
+                } else {
+                    currentBalance = currentBalance - 39.99;
+                    System.out.println("Bought RoverWatch Origins Edition");
+                }
+            }
+            else {
+                System.out.println("Not Found");
+            }
+            if (currentBalance == 0){
+                gamesToBuy = "Game Time";
+                break;
+            }
+            gamesToBuy = input.nextLine();
+        }
+        
+        if (currentBalance > 0) {
+            System.out.printf("Total spent: $%.2f. Remaining: $%.2f", startingBalance - currentBalance, currentBalance);
+        } else {
+            System.out.println("Out of money!");
+        }
+        
+    }
+}
