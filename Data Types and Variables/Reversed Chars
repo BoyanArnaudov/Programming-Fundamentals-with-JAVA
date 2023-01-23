@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class ReversedChars {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String char1 = input.nextLine();
+        String char2 = input.nextLine();
+        String char3 = input.nextLine();
+
+        System.out.printf("%s %s %s", char3, char2, char1);
+    }
+}
