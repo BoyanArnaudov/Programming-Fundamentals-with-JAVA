@@ -1,0 +1,18 @@
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+public class ExactSumOfRealNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int countNumbers = Integer.parseInt(input.nextLine());
+        BigDecimal total = new BigDecimal("0");
+
+        for (int i = 0; i < countNumbers; i++) {
+            BigDecimal number = new BigDecimal(input.nextLine());
+            total = total.add (number);
+        }
+
+        System.out.println(total);
+    }
+}
