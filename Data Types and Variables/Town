@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Town {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String townName = input.nextLine();
+        int population = Integer.parseInt(input.nextLine());
+        int areaInKm = Integer.parseInt(input.nextLine());
+
+        System.out.printf("Town %s has population of %d and area %d square km.", townName, population, areaInKm);
+    }
+}
