@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Elevator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int people = Integer.parseInt(input.nextLine());
+        int capacity = Integer.parseInt(input.nextLine());
+
+        int courses = people / capacity;
+        if (people % capacity != 0) {
+            courses ++;
+        }
+        System.out.println(courses);
+    }
+}
