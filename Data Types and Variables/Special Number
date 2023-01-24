@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SpecialNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number = Integer.parseInt(input.nextLine());
+        int count = 1;
+        for (int i = 1; i <= number; i++) {
+
+            if (count < 10){
+                if (count == 5 || count ==7){
+                    System.out.printf("%d -> True%n", count);
+                } else {
+                    System.out.printf("%d -> False%n", count);
+                }
+            } else if (count < 100) {
+                int sum = (count % 10) + (count / 10);
+                if (sum == 5 || sum == 7 || sum == 11){
+                    System.out.printf("%d -> True%n", count);
+                } else {
+                    System.out.printf("%d -> False%n", count);
+                }
+            }
+            count ++;
+        }
+    }
+}
