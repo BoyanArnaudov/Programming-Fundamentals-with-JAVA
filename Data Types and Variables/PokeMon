@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class PokeMon {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N = Integer.parseInt(input.nextLine());
+        int M = Integer.parseInt(input.nextLine());
+        int Y = Integer.parseInt(input.nextLine());
+        int pokePower = N;
+        int pokedTarget = 0;
+        while (N >= M){
+            if (N == pokePower / 2 && Y != 0){
+                N = N / Y;
+            }
+            if (N >= M) {
+                N = N - M;
+                pokedTarget ++;
+            }
+        }
+        System.out.println(N);
+        System.out.println(pokedTarget);
+    }
+}
