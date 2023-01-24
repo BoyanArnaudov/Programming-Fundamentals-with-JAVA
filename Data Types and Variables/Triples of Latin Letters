@@ -1,0 +1,18 @@
+package DataTypesAndVariables;
+
+import java.util.Scanner;
+
+public class TriplesOfLatinLetters {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int numbers = Integer.parseInt(input.nextLine());
+        for (char letter1 = 'a'; letter1 < 'a' + numbers; letter1++){
+            for (char letter2 = 'a'; letter2 < 'a' + numbers; letter2++){
+                for (char letter3 = 'a'; letter3 < 'a' + numbers; letter3++){
+                    System.out.printf("%c%c%c%n", letter1, letter2, letter3);
+                }
+            }
+        }
+    }
+}
