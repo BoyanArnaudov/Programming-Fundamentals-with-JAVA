@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class LowerOrUpper {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        char character = input.nextLine().charAt(0);
+
+        if (Character.isUpperCase(character)){
+            System.out.println("upper-case");
+        } else {
+            System.out.println("lower-case");
+        }
+    }
+}
