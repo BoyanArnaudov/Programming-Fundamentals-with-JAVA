@@ -1,0 +1,21 @@
+package DataTypesAndVariables;
+
+import java.util.Scanner;
+
+public class WaterOverflow {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int numbers = Integer.parseInt(input.nextLine());
+        int waterTank = 255;
+        for (int i = 0; i < numbers; i++) {
+            int liters = Integer.parseInt(input.nextLine());
+            if (liters > waterTank) {
+                System.out.println("Insufficient capacity!");
+            } else {
+                waterTank -= liters;
+            }
+        }
+        System.out.println(255-waterTank);
+    }
+}
