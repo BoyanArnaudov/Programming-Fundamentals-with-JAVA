@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class SumDigits {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int number = Integer.parseInt(input.nextLine());
+        int sum = 0;
+        int currentNumber;
+        while (number > 9){
+            sum = sum + (number % 10);
+            number = number / 10;
+        }
+        sum += number;
+        System.out.println(sum);
+    }
+}
