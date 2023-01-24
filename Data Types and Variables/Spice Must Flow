@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class SpiceMustFlow {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int startingYield = Integer.parseInt(input.nextLine());
+        int totalSpice = 0;
+        int days = 0;
+        while (startingYield >= 100) {
+
+            totalSpice = totalSpice + (startingYield - 26);
+            startingYield -= 10;
+            days ++;
+        }
+        if (totalSpice >= 26) {
+            totalSpice = totalSpice - 26;
+        }
+        System.out.println(days);
+        System.out.println(totalSpice);
+    }
+}
