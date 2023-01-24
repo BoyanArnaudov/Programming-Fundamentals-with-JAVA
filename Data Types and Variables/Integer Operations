@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class IntegerOperations {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int firstInt = Integer.parseInt(input.nextLine());
+        int secondInt = Integer.parseInt(input.nextLine());
+        int thirdInt = Integer.parseInt(input.nextLine());
+        int forthInt = Integer.parseInt(input.nextLine());
+
+        int sum = ((firstInt+secondInt) / thirdInt) * forthInt;
+
+        System.out.println(sum);
+    }
+}
