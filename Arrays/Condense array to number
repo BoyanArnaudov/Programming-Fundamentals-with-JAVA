@@ -1,3 +1,5 @@
+package Arrays;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -5,8 +7,10 @@ public class CondenseArrayToNumber {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] myArray = Arrays.stream(input.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] myArray = Arrays.stream(input.nextLine().split(" "))
+                .mapToInt(e->Integer.parseInt(e)).toArray();
         int[] smallArray = new int[myArray.length-1] ;
+        
         for (int i = 0; i < myArray.length; i++){
             if (myArray.length == 1) {
                 break;
@@ -19,7 +23,7 @@ public class CondenseArrayToNumber {
             } else {
                 smallArray[i] = myArray[i] + myArray [i+1];
             }
-        }      
+        }
         System.out.println(myArray[0]);
     }
 }
