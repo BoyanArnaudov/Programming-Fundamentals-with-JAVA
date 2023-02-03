@@ -1,17 +1,15 @@
+package Arrays;
+
 import java.util.Scanner;
 
-public class ReverseArrayOfString {
+public class ReverseAnArrayOfStrings {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String inn = input.nextLine();
-        String[] myString = inn.split(" ");
-        for (int i = 0; i < myString.length/2; i++){
-            String temporary = myString[i];
-            myString[i] = myString [myString.length - 1 - i];
-            myString[myString.length-1-i] = temporary;
-        }
-        for (int i = 0; i <= myString.length - 1; i++){
-            System.out.print(myString[i] + " ");
+
+        String[] array = input.nextLine().split(" ");
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.printf("%s ", array[i]);
         }
     }
 }
