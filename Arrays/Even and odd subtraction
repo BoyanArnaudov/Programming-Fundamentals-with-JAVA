@@ -4,16 +4,20 @@ import java.util.Scanner;
 public class EvenAndOddSubtraction {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] numbers = Arrays.stream(input.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int oddSum = 0, evenSum = 0;
 
-        for (int i = 0; i <= numbers.length - 1 ; i++) {
-            if (numbers[i] % 2 == 0){
-                evenSum += numbers[i];
+        int [] array = Arrays.stream(input.nextLine().split(" "))
+                .mapToInt((e -> Integer.parseInt(e))).toArray();
+        int evenSum = 0;
+        int oddSum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0){
+                evenSum += array[i];
             } else {
-                oddSum += numbers[i];
+                oddSum += array[i];
             }
         }
+
         System.out.println(evenSum - oddSum);
-  }
+    }
 }
