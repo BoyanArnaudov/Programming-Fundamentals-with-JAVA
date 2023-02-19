@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class GaussTrick {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        List<Integer> firstList = Arrays.stream(input.nextLine().split(" ")).map(Integer::parseInt)
+                .collect(Collectors.toList());
+        List<Integer> GaussList = new ArrayList<>();
+        int i = 0;
+
+        while (i < firstList.size() / 2) {
+            int currentSum = 0;
+            currentSum = firstList.get(i) + firstList.get(firstList.size() - 1 - i);
+            GaussList.add(currentSum);
+            i++;
+        }
+
+        if (firstList.size() % 2 != 0){
+            GaussList.add(firstList.get(firstList.size() / 2));
+        }
+
+        for (int number:GaussList) {
+            System.out.printf("%d ", number);
+        }
+    }
+}
