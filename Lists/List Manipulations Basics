@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+public class ListManipulationsBasics {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        List<Integer> numbers = Arrays.stream(input.nextLine().split(" ")).map(Integer::parseInt)
+                .collect(Collectors.toList());
+        String command = input.nextLine();
+
+        while (!command.equals("end")){
+            if (command.contains("Add")){
+                int addInt = Integer.parseInt(command.split(" ")[1]);
+                numbers.add(addInt);
+            }
+            
+            else if (command.contains("RemoveAt")) {
+                int removeAtInt = Integer.parseInt(command.split(" ")[1]);
+                numbers.remove(removeAtInt);
+            }
+            
+            else if (command.contains("Remove")) {
+                int removeInt = Integer.parseInt(command.split(" ")[1]);
+                numbers.remove(Integer.valueOf(removeInt));
+            }
+
+            else if (command.contains("Insert")){
+                String [] insertParts = command.split(" ");
+                int insertInt1 = Integer.parseInt(insertParts[1]);
+                int insertInt2 = Integer.parseInt(insertParts[2]);
+                numbers.add(insertInt2, insertInt1);
+            }
+            command = input.nextLine();
+        }
+        for (int num : numbers) {
+            System.out.printf("%d ", num);
+        }
+    }
+}
