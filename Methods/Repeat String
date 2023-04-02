@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class RepeatString {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String inputString = input.nextLine();
+        int repeatTimes = Integer.parseInt(input.nextLine());
+
+        System.out.println(repeatString(inputString, repeatTimes));
+    }
+    public static String repeatString(String input, int times){
+        String inputCalc = "";
+        for (int i = 1; i <= times; i++) {
+
+            inputCalc += input;
+        }
+        return inputCalc;
+    }
+}
